@@ -1,26 +1,161 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🔥 FWI Prediction</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }
+
+    .login {
+      backdrop-filter: blur(15px);
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+      padding: 40px 30px;
+      width: 100%;
+      max-width: 450px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+      background: linear-gradient(90deg, #00f2fe, #4facfe);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 14px 16px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      font-size: 16px;
+      outline: none;
+      transition: all 0.3s ease;
+      animation: slideUp 0.5s ease forwards;
+      opacity: 0;
+    }
+
+    input[type="text"]::placeholder {
+      color: #ccc;
+    }
+
+    input[type="text"]:focus {
+      background: rgba(255, 255, 255, 0.25);
+      box-shadow: 0 0 10px #00f2fe;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 20px;
+      background: linear-gradient(to right, #00f2fe, #4facfe);
+      border: none;
+      color: #fff;
+      font-size: 18px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease-in-out;
+      animation: glow 2s infinite alternate;
+    }
+
+    button:hover {
+      box-shadow: 0 0 15px #4facfe, 0 0 25px #00f2fe;
+      transform: translateY(-2px);
+    }
+
+    @keyframes glow {
+      0% {
+        box-shadow: 0 0 10px #00f2fe;
+      }
+      100% {
+        box-shadow: 0 0 20px #00f2fe, 0 0 30px #4facfe;
+      }
+    }
+
+    @keyframes slideUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    form input:nth-child(1) { animation-delay: 0.2s; }
+    form input:nth-child(2) { animation-delay: 0.3s; }
+    form input:nth-child(3) { animation-delay: 0.4s; }
+    form input:nth-child(4) { animation-delay: 0.5s; }
+    form input:nth-child(5) { animation-delay: 0.6s; }
+    form input:nth-child(6) { animation-delay: 0.7s; }
+    form input:nth-child(7) { animation-delay: 0.8s; }
+    form input:nth-child(8) { animation-delay: 0.9s; }
+    form input:nth-child(9) { animation-delay: 1s; }
+
+    h2 {
+      margin-top: 25px;
+      text-align: center;
+      color: #00f2fe;
+      font-size: 20px;
+      animation: fadeResult 1.2s ease-in-out forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeResult {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
 <body>
-    <div class="login">
-       <h1>FWI Prediction</h1>
-   
-        <!-- Main Input For Receiving Query to our ML -->
-       <form action="{{ url_for('predict_datapoint')}}" method="post">
-         <input type="text" name="Temperature" placeholder="Temperature" required="required" /><br>
-           <input type="text" name="RH" placeholder="RH" required="required" /><br>
-           <input type="text" name="Ws" placeholder="Ws" required="required" /><br>
-           <input type="text" name="Rain" placeholder="Rain" required="required" /><br>
-           <input type="text" name="FFMC" placeholder="FFMC" required="required" /><br>
-           <input type="text" name="DMC" placeholder="DMC" required="required" /><br>
-           <input type="text" name="ISI" placeholder="ISI" required="required" /><br>
-           <input type="text" name="Classes" placeholder="Classes" required="required" /><br>
-           <input type="text" name="Region" placeholder="Region" required="required" /><br>
-   
-   
-   
-           <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
-       </form>
-    <h2>
-       THE FWI prediction is {{result}}
-    </h2>
-   <body>
+  <div class="login">
+    <h1>🔥 FWI Prediction</h1>
+
+    <form action="{{ url_for('predict_datapoint') }}" method="post">
+      <input type="text" name="Temperature" placeholder="🌡 Temperature" required>
+      <input type="text" name="RH" placeholder="💧 Relative Humidity" required>
+      <input type="text" name="Ws" placeholder="💨 Wind Speed" required>
+      <input type="text" name="Rain" placeholder="🌧 Rain" required>
+      <input type="text" name="FFMC" placeholder="🔥 FFMC" required>
+      <input type="text" name="DMC" placeholder="🔥 DMC" required>
+      <input type="text" name="ISI" placeholder="🔥 ISI" required>
+      <input type="text" name="Classes" placeholder="📊 Fire Class" required>
+      <input type="text" name="Region" placeholder="🌍 Region" required>
+
+      <button type="submit">🚀 Predict Now</button>
+    </form>
+
+    {% if result %}
+    <h2>🔥 FWI Result: <strong>{{ result }}</strong></h2>
+    {% endif %}
+  </div>
+</body>
 </html>

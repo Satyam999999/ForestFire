@@ -1,1 +1,77 @@
-<h1> Welcome to the Home Page </h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Forest Fire Prediction</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #1f4037, #99f2c8);
+      height: 100vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+
+    h1 {
+      font-size: 3rem;
+      background: linear-gradient(90deg, #ff6a00, #ee0979);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: fadeInDown 1s ease-out forwards;
+      opacity: 0;
+    }
+
+    p {
+      max-width: 800px;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-top: 20px;
+      animation: fadeInUp 1.2s ease-in-out forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        transform: translateY(-30px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🔥 Forest Fire Prediction Project</h1>
+
+  <p>
+    This project delivers a smart solution to predict forest fire intensity, leveraging the <strong>Algerian Forest Fire Dataset</strong>. 
+    We employed a robust <strong>Ridge Regression model</strong> to ensure reliable and accurate predictions. 
+    The entire system is deployed using <strong>Flask</strong>, showcasing a complete data science workflow — including 
+    <strong>data preprocessing, cleaning, exploratory data analysis (EDA), feature engineering</strong>, and model deployment. 
+    Key Python libraries such as <strong>NumPy</strong>, <strong>Pandas</strong>, and <strong>Scikit-learn</strong> form the backbone of this application. 
+    The goal is to provide a lightweight, fast, and interactive prediction interface for early fire risk detection.
+  </p>
+  
+</body>
+</html>
