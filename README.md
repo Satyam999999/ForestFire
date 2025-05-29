@@ -6,7 +6,7 @@
 
 To install all requirements
 ```
-pip install -r requirements
+pip install -r requirements.txt
 ```
 
 To run flask application 
